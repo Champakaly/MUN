@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="star.css">
+        <link rel="stylesheet" href="commentboxstyle.css">
+        <link rel="stylesheet" href="fivestar.css">
+        <link rel="stylesheet" href="scrolltotop.css">
+        <link rel="stylesheet" href="nextpages.css">
+        <link rel="stylesheet" href="navbar.css">
+        <style>
+            body {
+                background-color:rgb(248, 227, 169);
+}
+        ul.no-bullets {
+        list-style-type: none;
+        margin: 0;
+        padding: 10px;
+        }      
+       .file-left{
+        float:left;
+        }
+        .file-right{
+            position: relative;
+            left:15px;
+            top: 15px;
+        }
+        .file-info{
+            position: relative;
+            top:20px;
+        }
+        .row {
+        box-sizing: border-box;
+
+        -moz-box-sizing: border-box;
+         -webkit-box-sizing: border-box;
+         width: 93%;
+          height: 100px;
+         border: 1px solid #969696;
+        margin: 20px;
+        border-radius: 10px;
+
+       }
+       .row a{
+        color: #e2ae1e;
+       }
+       .img-zoom_file-img{
+       z-index: 10; 
+       border: 1px;
+       border-radius: 10px;
+       width: 71px; 
+       height: 98px; 
+       margin-left: 0px; 
+       margin-top: 0px;
+       }
+.dialog-right{
+    margin-top: -980px;
+    width: 40%;
+    float: right;
+    height:660px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-right: 20px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+
+}
+ h1{
+    margin-top: 20px;
+    margin-left: 15px;
+    color: #c79610;
+}
+.dialog-right-bottom{
+    margin-top: -300px;
+    width: 40%;
+    float: right;
+    height:280px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-right: 20px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+
+}
+.dialog-right-bottom p{
+    margin-left: 15px;
+    margin-top: 15px;
+    line-height: 30px;
+
+}
+.dialog-left{
+    margin-left: 30px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+    width:740px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-left: 30px;
+    margin-top: 40px;
+    }
+
+
+
+.goright{
+    position: relative;
+    background-color: transparent;
+    border-color: transparent;
+    left:750px;
+    top:-165px;
+    transition: 0.5s;
+}
+.goleft{
+    position: relative;
+    background-color: transparent;
+    border-color: transparent;
+   left:525px;
+   top:10px;
+   transition: 0.5s;
+}
+.arrowsize{
+
+    font-size: 100px;
+    color: white;
+
+}
+.goright :hover{
+    position: relative;
+    top:-10px;
+}
+.goleft :hover{
+    position: relative;
+    top:-10px;
+}
+.askbutton{
+    margin-left: 15px;
+    margin-top: 10px;
+    background: #e0d143;
+	color: #fff;
+	padding: 10px 10px;
+	border: none;
+    cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+	transition: 1s all;
+	font-size: 10px;
+	border-radius: 5px;
+}
+ </style>
+
+</head>
+<body onload="myFunction3()">
+    <header>
+        <nav id="navbar" class="navbar background">
+            <ul class="nav-list">
+               <li> <div class="logo">
+                    <img src="logo.png">
+                </div></li>
+                <li><div class="home"><a href="demo.html">HOME</a></li></div>
+                <li><div class="dropdown">
+                    <button class="dropbtn">SELECT YEAR</button>
+                    <div class="dropdown-content">
+                    <a href="#">1st Year</a>
+                    <a href="#">2nd year</a>
+                    <a href="#">3rd Year</a>
+                    <a href="#">4th Year</a>
+                    </div></li>
+
+                <li><div class="contact"><a href="contactuspage.html">CONTACT US</a></div></li>
+                <li><div class="aboutus"><a href="aboutusdemo.html">ABOUT US</a></div></li>
+
+                <li><div class="rightNav">
+                  <input type="text" name="search" id="search" placeholder="Search" onkeyup="search()">
+              </div></li>
+             <li> <div class="signup">
+                  <a href="loginpage.html">SIGN UP</a>  </div>
+              </li>
+            </ul>
+
+
+        </nav>
+      </header>
+<div class="dialog">
+    <div class="dialog-main">
+        <div class="dialog-left">
+            <div class="files-new">
+
+            <ul class="no-bullets">
+                <li><div class="row" > 
+                            <div class="col-sm ">
+                                <div class="file-left">
+                                <a href="file:///C:/Users/Aditi%20Suhrut/Downloads/Unit%205%20Updated.pdf">
+                                <img class="img-zoom_file-img" src="img.jpg" loading="lazy">
+                                </a>
+                                </div>
+                             <div class="file-right" >
+                             <a href="file:///C:/Users/Aditi%20Suhrut/Downloads/Unit%205%20Updated.pdf" data-loc="1">
+                             <h2>Physics Unit 5 Notes</h2></a>
+                                    <div class="file-info">
+                                    <span class="fi-owner">Ravishankar</span>
+                                    <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-year">2022</span>
+                                    <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-pagecount">5 Pages</span>
+                                    <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-uni">RV</span> <br>
+                                    </div>&nbsp
+                                <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                                </div>
+                            </div>
+                    </div>
+            </div></li>
+                        <li><div class="row">
+                                <div class="col-sm ">
+                                    <div class="file-left">
+                                    <a href="somthinh.pdf" >
+                                    <img class="img-zoom_file-img" src="img2jpg" loading="lazy">
+                                    </a>
+                                    </div>
+                                    <div class="file-right">
+                                    <a href="somthinh.pdf" data-loc="2">
+                                    <h2>Physics unit 4000 Notes</h2>
+                                    </a>
+                                        <div class="file-info" data-id="58864799">
+                                        <span class="fi-owner">Ravishankar</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-year ">2022</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-pagecount">10 Pages</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-uni">RV</span><br>
+                                        </div>&nbsp
+                                        <div class="rate one">
+                                            <input type="radio" id="star5-1" name="rate1" value="5" />
+                                            <label for="star5-1" -2title="text">5 stars</label>
+                                            <input type="radio" id="star4-1" name="rate1" value="4" />
+                                            <label for="star4-1" title="text">4 stars</label>
+                                            <input type="radio" id="star3-1" name="rate1" value="3" />
+                                            <label for="star3-1" title="text">3 stars</label>
+                                            <input type="radio" id="star2-1" name="rate1" value="2" />
+                                            <label for="star2-1" title="text">2 stars</label>
+                                            <input type="radio" id="star1-1" name="rate1" value="1" />
+                                            <label for="star1-1" title="text">1 star</label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> </li>
+                        <li><div class="row">
+                                <div class="col-sm ">
+                                    <div class="file-left">
+                                    <a href="unit.pdf">
+                                    <img class="img-zoom_file-img" src="img3.jpg" loading="lazy">
+                                    </a>
+                                    </div>
+                                    <div class="file-right">
+                                    <a href="unit.pdf" data-loc="3">
+                                    <h2>Physics unit 100000 Notes</h2>
+                                    </a>
+                                        <div class="file-info" >
+                                        <span class="fi-owner">Ravishankar</span>-3
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-year ">2022</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-pagecount">7 Pages</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-uni">RV</span><br>
+                                        </div>&nbsp
+                                        <div class="rate two">
+                                            <input type="radio" id="star5-2" name="rate2" value="5" />
+                                            <label for="star5-2" title="text">5 stars</label>
+                                            <input type="radio" id="star4-2" name="rate2" value="4" />
+                                            <label for="star4-2" title="text">4 stars</label>
+                                            <input type="radio" id="star3-2" name="rate2" value="3" />
+                                            <label for="star3-2" title="text">3 stars</label>
+                                            <input type="radio" id="star2-2" name="rate2" value="2" />
+                                            <label for="star2-2" title="text">2 stars</label>
+                                            <input type="radio" id="star1-2" name="rate2" value="1" />
+                                            <label for="star1-2" title="text">1 star</label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> </li> 
+                            <li><div class="row">
+                                <div class="col-sm ">
+                                    <div class="file-left">
+                                    <a href="unit.pdf">
+                                    <img class="img-zoom_file-img" src="img3.jpg" loading="lazy">
+                                    </a>
+                                    </div>
+                                    <div class="file-right">
+                                    <a href="unit.pdf" data-loc="3">
+                                    <h2>Physics unit 3 Notes</h2>
+                                    </a>
+                                        <div class="file-info" >
+                                        <span class="fi-owner">Ravishankar</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-year ">2022</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-pagecount">7 Pages</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-uni">RV</span><br>
+                                        </div>&nbsp
+                                        <div class="rate three">
+                                            <input type="radio" id="star5-3" name="rate3" value="5" />
+                                            <label for="star5-3" title="text">5 stars</label>
+                                            <input type="radio" id="star4-3" name="rate3" value="4" />
+                                            <label for="star4-3" title="text">4 stars</label>
+                                            <input type="radio" id="star3-3" name="rate3" value="3" />
+                                            <label for="star3-3" title="text">3 stars</label>
+                                            <input type="radio" id="star2-3" name="rate3" value="2" />
+                                            <label for="star2-3" title="text">2 stars</label>
+                                            <input type="radio" id="star1-3" name="rate3" value="1" />
+                                            <label for="star1-3" title="text">1 star</label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> </li> 
+                            <li><div class="row">
+                                <div class="col-sm ">
+                                    <div class="file-left">
+                                    <a href="unit.pdf">
+                                    <img class="img-zoom_file-img" src="img3.jpg" loading="lazy">
+                                    </a>
+                                    </div>
+                                    <div class="file-right">
+                                    <a href="unit.pdf" data-loc="3">
+                                    <h2>Physics unit 3 Notes</h2>
+                                    </a>
+                                        <div class="file-info" >
+                                        <span class="fi-owner">Ravishankar</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-year ">2022</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-pagecount">7 Pages</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-uni">RV</span><br>
+                                        </div>&nbsp
+                                        <div class="rate four">
+                                            <input type="radio" id="star5-4" name="rate4" value="5" />
+                                            <label for="star5-4" title="text">5 stars</label>
+                                            <input type="radio" id="star4-4" name="rate4" value="4" />
+                                            <label for="star4-4" title="text">4 stars</label>
+                                            <input type="radio" id="star3-4" name="rate4" value="3" />
+                                            <label for="star3-4" title="text">3 stars</label>
+                                            <input type="radio" id="star2-4" name="rate4" value="2" />
+                                            <label for="star2-4" title="text">2 stars</label>
+                                            <input type="radio" id="star1-4" name="rate4" value="1" />
+                                            <label for="star1-4" title="text">1 star</label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> </li> 
+                            <li><div class="row">
+                                <div class="col-sm ">
+                                    <div class="file-left">
+                                    <a href="unit.pdf">
+                                    <img class="img-zoom_file-img" src="img3.jpg" loading="lazy">
+                                    </a>
+                                    </div>
+                                    <div class="file-right">
+                                    <a href="unit.pdf" data-loc="3">
+                                    <h2>Physics unit 3000 Notes</h2>
+                                    </a>
+                                        <div class="file-info" >
+                                        <span class="fi-owner">Ravishankar</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-year ">2022</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-pagecount">7 Pages</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-uni">RV</span><br>
+                                        </div>&nbsp
+                                        <div class="rate five">
+                                            <input type="radio" id="star5-5" name="rate5" value="5" />
+                                            <label for="star5-5" title="text">5 stars</label>
+                                            <input type="radio" id="star4-5" name="rate5" value="4" />
+                                            <label for="star4-5" title="text">4 stars</label>
+                                            <input type="radio" id="star3-5" name="rate5" value="3" />
+                                            <label for="star3-5" title="text">3 stars</label>
+                                            <input type="radio" id="star2-5" name="rate5" value="2" />
+                                            <label for="star2-5" title="text">2 stars</label>
+                                            <input type="radio" id="star1-5" name="rate5" value="1" />
+                                            <label for="star1-5" title="text">1 star</label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> </li> 
+                            <li><div class="row">
+                                <div class="col-sm ">
+                                    <div class="file-left">
+                                    <a href="unit.pdf">
+                                    <img class="img-zoom_file-img" src="img3.jpg" loading="lazy">
+                                    </a>
+                                    </div>
+                                    <div class="file-right">
+                                    <a href="unit.pdf" data-loc="3">
+                                    <h2>Physics unit 100 Notes</h2>
+                                    </a>
+                                        <div class="file-info" >
+                                        <span class="fi-owner">Ravishankar</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-year ">2022</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-pagecount">7 Pages</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-uni">RV</span><br>
+                                        </div>&nbsp
+                                        <div class="rate six">
+                                            <input type="radio" id="star5-6" name="rate6" value="5" />
+                                            <label for="star5-6" title="text">5 stars</label>
+                                            <input type="radio" id="star4-6" name="rate6" value="4" />
+                                            <label for="star4-6" title="text">4 stars</label>
+                                            <input type="radio" id="star3-6" name="rate6" value="3" />
+                                            <label for="star3-6" title="text">3 stars</label>
+                                            <input type="radio" id="star2-6" name="rate6" value="2" />
+                                            <label for="star2-6" title="text">2 stars</label>
+                                            <input type="radio" id="star1-6" name="rate6" value="1" />
+                                            <label for="star1-6" title="text">1 star</label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> </li> 
+                            <li><div class="row">
+                                <div class="col-sm ">
+                                    <div class="file-left">
+                                    <a href="unit.pdf">
+                                    <img class="img-zoom_file-img" src="img3.jpg" loading="lazy">
+                                    </a>
+                                    </div>
+                                    <div class="file-right">
+                                    <a href="unit.pdf" data-loc="3">
+                                    <h2>Physics unit 3 Notes</h2>
+                                    </a>
+                                        <div class="file-info" >
+                                        <span class="fi-owner">Ravishankar</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-year ">2022</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                        <span class="fi-pagecount">7 Pages</span>
+                                        <span class="ml-1 mr-1">·</span>
+                                    <span class="fi-uni">RV</span><br>
+                                        </div>&nbsp
+                                        <div class="rate seven">
+                                            <input type="radio" id="star5-7" name="rate7" value="5" />
+                                            <label for="star5-7" title="text">5 stars</label>
+                                            <input type="radio" id="star4-7" name="rate7" value="4" />
+                                            <label for="star4-7" title="text">4 stars</label>
+                                            <input type="radio" id="star3-7" name="rate7" value="3" />
+                                            <label for="star3-7" title="text">3 stars</label>
+                                            <input type="radio" id="star2-7" name="rate7" value="2" />
+                                            <label for="star2-7" title="text">2 stars</label>
+                                            <input type="radio" id="star1-7" name="rate7" value="1" />
+                                            <label for="star1-7" title="text">1 star</label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> </li> 
+                            <li class="liad"></li>
+                            </ul>
+                    </div>
+                    </div>
+
+<div class="dialog-right">
+    <h1>Comments</h1>
+    <section id="app">
+        <div class="container">
+          <div class="row_comment">
+            <div class="col-6">
+              <div class="comment">
+            <p v-for="items in item" v-text="items"></p>
+              </div><!--End Comment-->
+              </div><!--End col -->
+              </div><!-- End row -->
+          <div class="row_comment">
+            <div class="col-6">
+          <textarea type="text" class="input" placeholder="Write a comment" v-model="newItem" @keyup.enter="addItem()"></textarea>
+              <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Comment</button>
+            </div><!-- End col -->
+          </div><!--End Row -->
+        </div><!--End Container -->
+      </section><!-- end App -->
+      <!-- Vue JS -->
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="arrow up"></i> Top</button>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+<!-- jQuery -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='commentbox.js'></script>
+<script src="scrolltotop.js"></script>
+
+</div>
+
+<div class="dialog-right-bottom">
+    <h1>Doubt Corner</h1>
+    <p>Your doubt will be submitted to top physics professors from across all universities and will be answered as soon as possible!</p>
+    <input type="text" class="doubts" id="doubtcorner" style="margin-top:40px; margin-left: 15px; height:40px; width:500px;" placeholder="Write a question"></textarea>
+    <button class="askbutton">Ask</button>
+</div>
+
+</div>
+
+<button class="goleft" onclick="scrollleft()" ondblclick="myFunctiondbl()"><span class="arrowsize">«</span></button>
+<script>
+    function myFunctiondbl() {
+      window.location.href = "phypdfs1002.html";
+    }
+  </script>
+<div class="scrollmenu" id="scrollmenu">
+
+    <a href="pdfsphy1001.html">1</a>
+    <a href="phypdfs1002.html">2</a>
+    <a style="color: rgb(216, 189, 34); background-color: rgb(255, 255, 255);text-decoration: underline;border-radius: 5px;">3</a>
+    <a href="phypdfs1004.html">4</a>
+    <a href="#5">5</a>
+    <a href="#6">6</a>
+    <a href="#7">7</a>  
+    <a href="#8">8</a>
+    <a href="#9">9</a>
+    <a href="#10">10</a>
+  </div>
+  <button class="goright" onclick="scrollright()" ondblclick="myFunctiondbr()"><span class="arrowsize">»</span></button>
+  <script>
+    function myFunctiondbr() {
+      window.location.href = "phypdfs1004.html";
+    }
+
+  </script>
+  <script src="movepages.js"></script>
+  <script>
+    function myFunction3() {
+      const element = document.getElementById("scrollmenu");
+      element.scrollLeft += 40;
+    }
+    </script>
+</div>
+
+
+        </body>
+
+</html>

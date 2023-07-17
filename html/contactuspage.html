@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href="stylesheet.css" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <style>
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    height: 125px;
+    z-index: 2;
+    
+}
+.background {
+    background: white;
+    background-blend-mode: darken;
+    background-size: cover;
+}
+.nav-list {
+    width: 70%;
+    display: flex;
+    align-items: center;
+  
+  margin-top: 10px;;
+    justify-content: center;
+   
+    
+}
+.logo {
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img {
+    width: 80px;
+    border-radius: 100px;
+}
+.nav-list li {
+    list-style: none;
+    padding: 26px 30px;
+    
+}
+.nav-list li a {
+    text-decoration:none ;
+    color: rgb(204, 135, 7);
+}
+.nav-list li a:hover {
+    color: gray;
+}
+.rightnav {
+    width: 30%;
+    padding-right: 10px;
+    text-align: right;
+}
+.contact { width:120px;}
+.aboutus{ width:100px;}
+.signup{width:200px;}
+input[type=text]{
+    border-radius: 9px;
+    padding: 5px;
+    font-size: 17px;
+    box-sizing: border-box;
+    border:2px solid rgb(204, 135, 7);
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus{
+    border:2px solid grey ;
+}
+
+.signup {
+    padding: 26px 30px;
+  }
+  .signup a{
+    text-decoration:none ;
+    padding: 26px 30px;
+    color: rgb(204, 135, 7);
+  }
+  .signup a:hover {
+    color: gray;
+}
+
+.dropbtn {
+    background-color: #ffffff;
+    color: rgb(204, 135, 7);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: rgb(248, 227, 169) }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .dropdown:hover .dropbtn {
+    color: grey;
+  }
+  
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+
+    /* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  background:rgb(248, 227, 169) ;
+  
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  margin-top: 50px;
+  margin-left: 250px;
+  width: 65%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+ 
+}
+.container .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .content .left-side{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+}
+.content .left-side::before{
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #afafb6;
+}
+.content .left-side .details{
+  margin: 14px;
+  text-align: center;
+}
+.content .left-side .details i{
+  font-size: 30px;
+  color: rgb(204, 135, 7);
+  margin-bottom: 10px;
+}
+.content .left-side .details .topic{
+  font-size: 18px;
+  font-weight: 500;
+}
+.content .left-side .details .text-one,
+.content .left-side .details .text-two{
+  font-size: 14px;
+  color: #afafb6;
+}
+.container .content .right-side{
+  width: 75%;
+  margin-top: 40px;
+  margin-left: 75px;
+}
+.content .right-side .topic-text{
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(204, 135, 7);
+  
+}
+p{
+  position: relative;
+  top:10px;
+  line-height: 2;
+  font-size: 17px;
+}
+.right-side .input-box{
+  height: 50px;
+  width: 100%;
+  margin: 12px 0;
+}
+.right-side .input-box input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #F0F1F8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+  margin-top: 30px;
+}
+.right-side .message-box{
+  min-height: 110px;
+}
+
+.right-side .button{
+  display: inline-block;
+  margin-top: 12px;
+}
+.right-side .button input[type="button"]{
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: rgb(234, 172, 57);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  top:-30px;
+}
+.button input[type="button"]:hover{
+  background: rgb(204, 135, 7);
+}
+
+@media (max-width: 950px) {
+  .container{
+    width: 90%;
+    padding: 30px 40px 40px 35px ;
+  }
+  .container .content .right-side{
+   width: 75%;
+   margin-left: 55px;
+}
+}
+@media (max-width: 820px) {
+  .container{
+    margin: 40px 0;
+    height: 100%;
+  }
+  .container .content{
+    flex-direction: column-reverse;
+  }
+ .container .content .left-side{
+   width: 100%;
+   flex-direction: row;
+   margin-top: 40px;
+   justify-content: center;
+   flex-wrap: wrap;
+ }
+ .container .content .left-side::before{
+   display: none;
+ }
+ .container .content .right-side{
+   width: 100%;
+   margin-left: 0;
+ }
+}
+
+
+
+
+   </style>
+<body>
+  <nav class="navbar background">
+    <ul class="nav-list">
+       <li> <div class="logo">
+            <img src="logo.png">
+        </div></li>
+        <li><a href="demo.html">HOME</a></li>
+        <li><div class="dropdown">
+            <button class="dropbtn">SELECT YEAR</button>
+            <div class="dropdown-content">
+            <a href="#">1st Year</a>
+            <a href="#">2nd year</a>
+            <a href="#">3rd Year</a>
+            <a href="#">4th Year</a>
+            </div></li>
+        <li><div class="contact"><a href="contactuspage.html">CONTACT US</a></div></li>
+        <li><div class="aboutus"><a href="aboutusdemo.html">ABOUT US</a></div></li>
+        
+        <li><div class="rightNav">
+          <input type="text" name="search" id="search" placeholder="Search" onclick="myfunction()">
+      </div></li>
+     <li> <div class="signup">
+          <a href="loginpage.html">SIGN UP</a>  </div>
+      </li>
+    </ul>
+
+   
+</nav>
+  <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">Basavanagudi, NP12</div>
+          <div class="text-two">Bangalore 06</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+0098 9893 5647</div>
+          <div class="text-two">+0096 3434 5678</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">aishwarya.cs21@bmsce.ac.in</div>
+          <div class="text-two">aditi.cs21@bmsce.ac.in</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>If you have any work from us or any types of queries related to our website, you can send us a message from here. It'll be our pleasure to help you.</p>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Enter your name">
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Enter your email">
+        </div>
+        <div class="input-box message-box">
+          
+        </div>
+        <div class="button">
+          <input type="button" value="Send Now" >
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

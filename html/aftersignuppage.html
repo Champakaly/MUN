@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="validate.js"></script>
+    <script>
+      
+
+
+      async function attend1(event) {
+          event.preventDefault();
+          // console.log(event.target);
+          // console.log('hello', email, password1);
+          const username = document.getElementById('username');
+          const identity = document.getElementById('Identity');
+          const college = document.getElementById('collegename');
+          
+          console.log(username.value, identity.value, college.value);
+          const options = {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json;charset=UTF-8',
+                  "Authentication": "Bearer a;lskfdjlknf'qo[ehfnasdmvnahd]"
+              },
+              body: JSON.stringify({ username: username.value, identity: identity.value, college: college.value })
+          };
+          console.log(options.body);
+          const response = await fetch('http://localhost:5500/attend1', options);
+          const data = await response.json();
+          console.log(data);
+
+          window.location = "/html/demo.html";
+      }        
+  </script>
+
+    <style>
+        Body {  
+            background-image: url("bookshelves.png");
+            background-repeat: repeat-x;
+            background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;  
+  background-color: white;  
+  position: relative;
+}  
+button {   
+
+       background-color:black;  
+       border-radius: 20px; 
+       width: 100%;  
+        color: white;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ .form-label{   
+    border: 3px solid 50px; 
+    display: flex;
+    justify-content: left;
+    align-items: center;  
+
+    }   
+ input[type=text] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 20px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {  
+        border-radius: 25px; 
+        opacity: 0.7;  
+        background-color: gray;
+        color:rgb(255, 255, 255); 
+    }   
+
+.container {   
+        height:300px;
+        width:350px;
+        padding: 50px;   
+        background-color:rgb(248, 227, 169);  
+        margin-left: 850px;
+        margin-top: 120px;
+        border-color: black;
+        border: 50px;
+        border-radius: 5%;
+        opacity:0.9;
+        font-size: 17px;
+        -webkit-box-shadow: -1px -1px 20px 1px rgba(0,0,0,0.57);
+-moz-box-shadow: -1px -1px 20px 1px rgba(0,0,0,0.57);
+box-shadow: -1px -1px 20px 1px rgba(0,0,0,0.57);
+
+    }   
+.inpboxes{
+    height:30px;
+    width: 100%;
+    border:0px;
+}
+
+.inpcont{
+    position: absolute;
+    top: 0;
+}
+.create{
+    font-size: 30px;
+    margin-left: 50px ;
+    margin-top: -30px;
+    padding-bottom: 30px;
+}
+.container2 {
+  display: flexbox;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  padding-right: 30px;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: rgb(247, 244, 244);
+  border: 1px solid #e6b207;;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container2:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container2 input:checked ~ .checkmark {
+  background-color: #e6b207;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container2 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container2 .checkmark:after {
+ 	top: 4.6px;
+	left: 4.6px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: white;
+}
+.leftcont{
+    position: relative;
+    top:60px;
+    left: 350px;
+    color: white;  
+}
+.munimg{
+    position: relative;
+    top: 225px;
+    left:130px;
+}
+.lsidesignup{
+    margin-top: -10px;
+    line-height: 1.5;
+}
+h1{
+    margin-top: 10px;
+}
+</style>
+
+
+</head>
+<body>
+
+    <div class="munimg"><img src="municon.png" height="200" width="200"></div>
+    <div class="leftcont">
+
+    <h1>Multi-University Notes</h1>
+    <div class="lsidesignup" >MUN covers a wide range of academic learning, allowing <br> 
+        you to supplement your studies with additional knowledge.</div>
+    </div>
+    <div class="container inpcont">
+
+      <form id="aftersignupform" method="post">&nbsp&nbsp&nbsp&nbsp
+            <div class="mb-3">
+                <label for="username" class="form-label">Enter a username:</label>
+                <input type="username" style="border-radius:5px" class="inpboxes form-control" id="username" placeholder="Username" required>
+            </div>&nbsp;
+
+            <div class="mb-3">
+              <label for="username" class="form-label">Your Identity:</label>
+              <input type="Identity" style="border-radius:5px" class="inpboxes form-control" id="Identity" placeholder="Student/Lecturer`" required>
+            </div>&nbsp;
+
+            <div class="mb-3">
+                <label for="collegename" class="form-label" style="padding-bottom: 7px;">Enter the name of your college/university: </label>
+                <input type="collegename" style="border-radius:5px" class="inpboxes form-control" id="collegename" required>
+            </div>&nbsp;
+
+            <button type="submit" value="submit" class="Submit"><a style="text-decoration: none !important; color: white;" href="demo.html">Submit</a></button>
+
+        </form>
+    </div>
+
+</body>
+<script>
+  document.getElementById('aftersignupform').addEventListener('submit', (event)=>attend1(event));
+</script>
+</html>
