@@ -189,11 +189,11 @@
                 <li><div class="row" > 
                             <div class="col-sm ">
                                 <div class="file-left">
-                                <a href="file:///C:/Users/Aditi%20Suhrut/Downloads/Unit%205%20Updated.pdf">
+                                <!--<a href="file:///C:/Users/Aditi%20Suhrut/Downloads/Unit%205%20Updated.pdf">-->
                                 <img class="img-zoom_file-img" src="img.jpg" loading="lazy">
                                 </a>
                                 </div>
-                             <div class="file-right" >
+                             <div class="file-right" id="pdfList">
                              <a href="file:///C:/Users/Aditi%20Suhrut/Downloads/Unit%205%20Updated.pdf" data-loc="1">
                              <h2>Physics Unit 5 Notes</h2></a>
                                     <div class="file-info">
@@ -227,7 +227,7 @@
                                     <img class="img-zoom_file-img" src="img2jpg" loading="lazy">
                                     </a>
                                     </div>
-                                    <div class="file-right">
+                                    <div class="file-right" id="pdfList">
                                     <a href="somthinh.pdf" data-loc="2">
                                     <h2>Physics unit 4 Notes</h2>
                                     </a>
@@ -530,7 +530,29 @@
   </script>
   <script src="movepages.js"></script>
 </div>
+<script>
+    // Function to fetch the list of uploaded PDFs from the server
+    function fetchPDFs() {
+      fetch('/pdfs')
+        .then((res) => res.json())
+        .then((data) => {
+          const pdfList = document.getElementById('pdfList');
+          pdfList.innerHTML = ''; // Clear the previous list
+          data.forEach((pdf) => {
+            const li = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `/pdf/${pdf.filename}`;
+            link.textContent = pdf.filename;
+            li.appendChild(link);
+            pdfList.appendChild(li);
+          });
+        })
+        .catch((error) => console.error('Error fetching PDFs:', error));
+    }
 
+    // Fetch the list of PDFs when the page loads
+    fetchPDFs();
+  </script>
 
         </body>
 

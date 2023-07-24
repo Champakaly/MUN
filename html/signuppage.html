@@ -16,22 +16,20 @@
 
         async function attend(event) {
             event.preventDefault();
-            // console.log(event.target);
-            // console.log('hello', email, password1);
             const email = document.getElementById('email');
             const username = document.getElementById('username');
             const password = document.getElementById('password1');
             const confirmPassword = document.getElementById('password2');
 
-            /*if (password.length < 6) {
+            if (password.value.length < 6) {
                 alert("password should be 6-8 characters");
                 return false;
             }
 
-            else if (password.value != confirmpassword.value) {
+            else if (password.value != confirmPassword.value) {
                 alert("password did not match");
                 return false;
-            }*/
+            }
 
             
             console.log(email.value, username.value, password.value, confirmPassword.value );
@@ -226,18 +224,7 @@
             <button class="Signup" value="submit" type="submit">Sign up</button>
             <div class="gotosignup">Already have an account? <a href="loginpage.html" style="color:blue ;">Log in</a>
             </div>
-            <!--<div class="termncondi">
-                <input id="checkbox" type="checkbox" />
-                <label for="checkbox">I agree to these <a href="#" style="color: #ac8711;">Terms and
-                        Conditions</a></label>
-            </div>
-            <div class="other-sign-type">
-                <div class="left"><span>Or sign up with</span></div>
-                <div class="right">
-                    <a href="#" title="Google" class="icon" id="googleButton"><img src="googleimg.png" height="30"
-                            width="30" style="padding-top: 2px; padding-left: 2px; padding-bottom: 2px;"></a>
-                </div>
-            </div>-->
+            
 
         </form>
 

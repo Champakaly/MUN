@@ -18,7 +18,7 @@
             
             const username = document.getElementById('username');
             const password = document.getElementById('password');
-            if (password.length < 6) {
+            if (password.value.length < 6) {
                 alert("password should be 6-8 characters");
                 return false;
             }
@@ -34,9 +34,11 @@
             };
             console.log(options.body);
             const response = await fetch('http://localhost:5500/login', options);
-            const data = await response.json();
-            console.log(data);
-
+            const data = await response.text();
+            //console.log('hello');
+             if(data=="message: Incorrect password")
+           { alert("data");}
+            else
             window.location = "/html/home.html";
         }
 

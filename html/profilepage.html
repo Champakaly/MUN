@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
 
-    <!-- Custom Css -->
-    <link rel="stylesheet" href="style.css">
 
-    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
+
+<script>
+    // JavaScript to fetch user details from the server and update the profile page
+    const _id = '64b7ae2f0268b355a4d676d2'; // Replace '123' with the actual user ID
+    fetch(`/user/${_id}`)
+      .then(response => response.json())
+      .then(user => {
+        // Update the profile page with user details
+        document.getElementById('name').innerText = user.name;
+        document.getElementById('email').innerText = user.email;
+        // Update more details as needed
+      })
+      .catch(error => console.error('Error fetching user details:', error));
+  </script>
+
+
 <style>
     @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
 
@@ -257,7 +271,10 @@ opacity:0.9;
                 <hr align="center">
             </div>
             <div class="url">
-                <a href="#settings">Bookmarks</a>
+                <form action="/users/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="pdf" />
+                    <button type="submit">Upload PDF</button>
+                  </form>
                 <hr align="center">
             </div>
         </div>
@@ -290,18 +307,18 @@ opacity:0.9;
 
                         <tr>
                             <tr>
-                                <td><b>Username</b></td>
+                                <td  id="username"><b>Username</b></td>
                                 <td><b>:</b></td>
-                                <td style="background-color:#fff; border-radius:10px;">&nbsp;Champakaly</td>
+                                <td style="background-color:#fff; border-radius:10px;">&nbsp;</td>
                             </tr>
                             <td><b>Name</b></td>
                             <td><b>:</b></td>
                             <td style="background-color:#fff; border-radius:10px;">&nbsp;Champa</td>
                         </tr>
                         <tr>
-                            <td><b>Email</b></td>
+                            <td id=""email><b>Email</b></td>
                             <td><b>:</b></td>
-                            <td style="background-color:#fff; border-radius:10px;">&nbsp;iluvmun@gmail.com</td>
+                            <td style="background-color:#fff; border-radius:10px;">&nbsp;</td>
                         </tr>
 
                         <tr>

@@ -12,4 +12,13 @@ const userSchema = new Schema({
 
 //const User = mongoose.model('User', userSchema)
 
-module.exports = User = mongoose.model('users', userSchema);
+const pdfSchema = new Schema({
+  filename: { type: String, required: true },
+  fileId: { type: Schema.Types.ObjectId, required: true },
+  uploadedBy: { type: String, required: true }, // Add this field to store the email/username of the user
+});
+const Pdf = mongoose.model('Pdf', pdfSchema);
+const User = mongoose.model('User', userSchema);
+
+//module.exports = User = mongoose.model('users', userSchema);
+module.exports = { Pdf, User };
