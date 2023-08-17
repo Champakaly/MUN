@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+const passportLocalMongoose = require("passport-local-mongoose");
 const userSchema = new Schema({
   
     email: { type: String, required: true, unique: true},
@@ -8,17 +8,17 @@ const userSchema = new Schema({
    password:{ type: String, required: true },
   // college: {type: String, required: true},
   // identity: {type: String, required: true}
+  
 })
 
+
+
+
+//module.exports = File;
 //const User = mongoose.model('User', userSchema)
 
-const pdfSchema = new Schema({
-  filename: { type: String, required: true },
-  fileId: { type: Schema.Types.ObjectId, required: true },
-  uploadedBy: { type: String, required: true }, // Add this field to store the email/username of the user
-});
-const Pdf = mongoose.model('Pdf', pdfSchema);
-const User = mongoose.model('User', userSchema);
+// const Pdf = mongoose.model('Pdf', pdfSchema);
+userSchema.plugin(passportLocalMongoose);
 
-//module.exports = User = mongoose.model('users', userSchema);
-module.exports = { Pdf, User };
+module.exports = User = mongoose.model('users', userSchema);
+//module.exports = { File, User };
