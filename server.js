@@ -299,7 +299,7 @@ app.get('/api/pdf', async (req, res) => {
     return res.status(500).send('GridFS is not initialized');
   }
 
-  const pdfId = '64d9f37fbea0da45fe071ba9';
+  const pdfId = '664ddd5e428d9cfdb18bb40aa';
   const pdfStream = gfs.openDownloadStream(pdfId);
 
  
