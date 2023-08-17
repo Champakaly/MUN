@@ -21,11 +21,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Docker image
-        run: docker build -t aish0104/mun:0.0.1.RELEASE .
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}  
 
-      - name: Publish Docker image
-        run: |
-          echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-          docker tag aish0104/mun:0.0.1.RELEASE ${{ secrets.DOCKERHUB_USERNAME }}/aish0104/mun:0.0.1.RELEASE:${{ github.sha }}
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/aish0104/mun:0.0.1.RELEASE:${{ github.sha }}
+      - name: Build and push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          image: aish0104/mun
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}  
+          
+
+     
