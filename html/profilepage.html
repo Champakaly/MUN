@@ -19,7 +19,7 @@
         // Update the profile page with user details
         document.getElementById('name').innerText = user.name;
         document.getElementById('email').innerText = user.email;
-        // Update more details as needed
+
       })
       .catch(error => console.error('Error fetching user details:', error));
   </script> -->
@@ -315,9 +315,8 @@ opacity:0.9;
                 <hr align="center">
             </div>
             <div class="url">
-                <!-- <form id="pdfUploadForm" action="/upload" method="POST" enctype="multipart/form-data"> -->
-                    <form id="pdfUploadForm" action="/upload" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="pdf" id="pdfFile" accept=".pdf" required>
+                <form action="/users/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="pdf" />
                     <button type="submit">Upload PDF</button>
                   </form>
                 <hr align="center">
@@ -421,7 +420,4 @@ opacity:0.9;
     </div>
     <!-- End -->
 </body>
-<script>
-    document.getElementById('pdfUploadForm').addEventListener('submit', (event)=> upload(event));
-</script>
 </html>
