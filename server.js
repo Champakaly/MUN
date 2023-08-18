@@ -304,6 +304,7 @@ app.get('/api/pdf', async (req, res) => {
 
   const pdfId = '664ddd5e428d9cfdb18bb40aa';
   const pdfStream = gfs.openDownloadStream(pdfId);
+
   
 
  
