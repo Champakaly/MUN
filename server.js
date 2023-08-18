@@ -89,6 +89,9 @@ app.get('/signuppage',(req,res)=>{
   app.get('/bookshelves.png', function(req,res){
     res.sendFile(__dirname + "/public/" + "bookshelves.png")
   });
+  app.get('/bg image.jpg', function(req,res){
+    res.sendFile(__dirname + "/public/" + "bg image.jpg")
+  });
   // app.use('/static', express.static(path.join(__dirname, 'public')))
   app.post('/signuppage',async (req,res)=>{
     const {username,email, password, password2} = req.body;
@@ -301,6 +304,7 @@ app.get('/api/pdf', async (req, res) => {
 
   const pdfId = '664ddd5e428d9cfdb18bb40aa';
   const pdfStream = gfs.openDownloadStream(pdfId);
+  
 
  
   pdfStream.pipe(res);
