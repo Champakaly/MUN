@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="stylesheet.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-sclae=1.0">
+ 
+ 
+  </head>
+  <style>
+
+  html {
+  scroll-behavior: smooth;
+}
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    height: 125px;
+    z-index: 2;
+    
+}
+.background {
+    background: white;
+    background-blend-mode: darken;
+    background-size: cover;
+}
+.nav-list {
+    width: 70%;
+    display: flex;
+    align-items: center;
+  
+  margin-top: 10px;;
+    justify-content: center;
+   
+    
+}
+.logo {
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img {
+    width: 80px;
+    border-radius: 100px;
+}
+.nav-list li {
+    list-style: none;
+    padding: 26px 30px;
+    
+}
+.nav-list li a {
+    text-decoration:none ;
+    color: rgb(204, 135, 7);
+}
+.nav-list li a:hover {
+    color: gray;
+}
+.rightnav {
+    width: 30%;
+    padding-right: 10px;
+    text-align: right;
+}
+.contact { width:120px;}
+.aboutus{ width:100px;}
+.signup{width:200px;}
+input[type=text]{
+    border-radius: 9px;
+    padding: 5px;
+    font-size: 17px;
+    box-sizing: border-box;
+    border:2px solid rgb(204, 135, 7);
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus{
+    border:2px solid grey ;
+}
+
+.signup {
+    padding: 26px 30px;
+  }
+  .signup a{
+    text-decoration:none ;
+    padding: 26px 30px;
+    color: rgb(204, 135, 7);
+  }
+  .signup a:hover {
+    color: gray;
+}
+
+.dropbtn {
+    background-color: #ffffff;
+    color: rgb(204, 135, 7);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: rgb(248, 227, 169) }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .dropdown:hover .dropbtn {
+    color: grey;
+  }
+  
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  
+
+    body{
+  margin: 0;
+   padding: 0;
+   font-family: "open sans",sans-serif;
+ background:rgb(248, 227, 169) ;
+  background-size: cover;
+  height: 100%;
+
+}
+.about-section{
+  width: 70%;
+background:#fff;
+padding: 40px 0;
+margin-left: auto;
+margin-right:auto;
+margin-top: 30px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+border-radius: 30px;
+border-left: 50px solid rgb(249, 199, 107);
+border-right: 50px solid rgb(249, 199, 107);
+}
+.inner-width{
+  max-width: 1000px;
+  overflow: hidden;
+  padding: 0 20px;
+  margin: auto;
+}
+.about-section h1{
+  text-align: center;
+}
+.border{
+  width: 100px;
+  height: 3px;
+  background: rgb(249, 199, 107);
+  margin: 40px auto;
+}
+.about-section-row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.about-section-col{
+  flex: 50%;
+}
+.about{
+  padding-right: 30px;
+}
+.about p{
+  text-align: justify;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 17px;
+}
+.about a{
+  display: inline-block;
+  color:black;
+  text-decoration: none;
+  border: 2px solid rgb(249, 199, 107);
+  border-radius: 24px;
+  padding: 8px 40px;
+  transition: 0.4s linear;
+}
+.about a:hover{
+  color: #fff;
+  background: rgb(249, 199, 107);
+}
+.skills{
+  padding-left: 30px;
+}
+.skill{
+  margin-bottom: 10px;
+}
+.title{
+  color: black;
+}
+.progress{
+  width: 100%;
+  height: 12px;
+  background: #ddd;
+  border-radius: 12px;
+}
+.progress-bar{
+  height: 12px;
+  background: rgb(249, 199, 107);
+  border-radius: 12px;
+}
+.p1{
+  width: 90%;
+}
+.p2{
+  width: 70%;
+}
+.p3{
+  width: 50%;
+}
+.progress-bar span{
+  float: right;
+  margin-right: 6px;
+  line-height: 13px;
+  color: #fff;
+  font-size: 12px;
+}
+@media screen and (max-width:700px) {
+  .about-section-col{
+    flex: 100%;
+    margin: 10px 0;
+  }
+  .about,.skills{
+    padding: 0;
+  }
+  .about{
+    text-align: center;
+  }
+}
+
+
+  </style>
+  <body>
+    <nav class="navbar background">
+      <ul class="nav-list">
+         <li> <div class="logo">
+              <img src="logo.png">
+          </div></li>
+          <li><a href="demo.html">HOME</a></li>
+          <li><div class="dropdown">
+              <button class="dropbtn">SELECT YEAR</button>
+              <div class="dropdown-content">
+              <a href="#">1st Year</a>
+              <a href="#">2nd year</a>
+              <a href="#">3rd Year</a>
+              <a href="#">4th Year</a>
+              </div></li>
+          <li><div class="contact"><a href="contactuspage.html">CONTACT US</a></div></li>
+          <li><div class="aboutus"><a href="aboutusdemo.html">ABOUT US</a></div></li>
+          
+          <li><div class="rightNav">
+            <input type="text" name="search" id="search" placeholder="Search" onclick="myfunction()">
+        </div></li>
+       <li> <div class="signup">
+            <a href="loginpage.html">SIGN UP</a>  </div>
+        </li>
+      </ul>
+  
+     
+  </nav>
+    
+    
+      <div class="about-section">
+        <div class="inner-width">
+          <h1>About Us</h1>
+          <div class="border"></div>
+          <div class="about-section-row">
+            <div class="about-section-col">
+              <div class="about">
+                <h2>Our Mission:</h2>
+<h3>
+    <p><b>Every learner should be able to access premium quality study material anytime, anywhere! We aim at becoming the Largest end-to-end Platform for Undergrad Students, to empower them and to service all their related needs that remain unsolved till now.</b></p></h3>
+   <h2> Our Values:</h2>
+   <h3>
+    <p><b>We believe the best education is a result of cumulative efforts, and so, we maintain the crux of community learning. At LectureNotes, every student can rely on a widespread community of top-class notes, curated for everyone.</b></p> </h3>
+    <h2>Our Vision:</h2>
+    <h3>
+       <p>To revolutionize education by 
+        <ul type="square">
+    <li>Democratizing learning</li>
+    <li>Digitalizing Classrooms</li>
+    <li>Improving Interactions</li>
+    </ul>
+        A complete revamp of LectureNotes has been done  with special focus on improving the user experience and introducing new courses and categories .We  aim to expand number of students across  engineering  streams.</p> </h3>
+   
+                
+
+                
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <div class="about-section-col">
+              <div class="skills">
+                <div class="skill">
+                  <div class="title">HTML</div>
+                  <div class="progress">
+                    <div class="progress-bar p1"><span>90%</span></div>
+                  </div>
+                </div>
+ 
+                <div class="skill">
+                  <div class="title">CSS</div>
+                  <div class="progress">
+                    <div class="progress-bar p2"><span>70%</span></div>
+                  </div>
+                </div>
+ 
+                <div class="skill">
+                  <div class="title">JAVASCRIPT</div>
+                  <div class="progress">
+                    <div class="progress-bar p3"><span>50%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

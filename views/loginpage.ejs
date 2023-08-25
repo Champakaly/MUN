@@ -92,7 +92,7 @@
         }
 
         .container {
-            height: 300px;
+         
             width: 350px;
             padding: 50px;
             background-color: rgb(248, 227, 169);
@@ -176,6 +176,11 @@
         h1 {
             margin-top: 200px;
         }
+        .message{
+            color:red;
+            font-style: italic;
+            font-size: small;
+        }
     </style>
 
 </head>
@@ -191,9 +196,9 @@
     </div>
 
     <div class="container inpcont">
-
+        <div class="create" style="color: rgb(126, 83, 3); position: relative; top:20px; right:20px;">Login to your Account</div>
         <form id="loginform" action="/loginpage" method="post" >&nbsp&nbsp&nbsp&nbsp
-            <%- include ('./partials/messages') %>
+           
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
                 <input type="email" name="email" style="border-radius:5px" class="inpboxes form-control" id="email" placeholder="Email" required>
@@ -203,9 +208,14 @@
                 <input type="password" name= "password" style="border-radius:5px" class="inpboxes form-control" name="password"
                     id="password" placeholder="Password (6-8) characters" required>
             </div>&nbsp;
-
+            
 
             <button class="login" value="submit" type="submit">Sign in</button>
+            <div class= "message">
+                <%- include ('./partials/messages') %> 
+                </div>
+                <div class="gotosignup">Do not have an account? <a href="/signuppage" style="color:blue ;">Sign up</a>
+                </div>
 
         </form>
 

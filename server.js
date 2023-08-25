@@ -19,17 +19,17 @@ const passport = require('passport');
 require("./config/passport")(passport)
 const {ensureAuthenticated} = require("./config/auth.js")
 
+
+
+
 app.use(express.json())
 app.use(cors());
-//app.use(express.json({ limit: '50mb' }));
-// app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 //const source = process.env.ATLAS_CONNECTION;
 mongoose.connect('mongodb+srv://aishwarya:aishwaryapass@cluster0.fah4o06.mongodb.net/?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-//app.use(expressEjsLayout);
 
  app.use(express.urlencoded({extended : false}));
  app.use(bodyParser.urlencoded({ extended: false }));
@@ -52,7 +52,7 @@ const router  = require('./controllers/user.controller');
 const User = require('./models/user.model');
 
 
-//app.use(express.static('public'));
+
 app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   res.render("signuppage")
@@ -61,9 +61,17 @@ app.get("/", (req, res) => {
     res.render('index', {user: req.user});
   
  })
- app.get("/pdfsphy1001", (req, res) => {
-  res.render("pdfsphy1001")
- })
+ app.get("/aboutus",  (req, res) => {
+  res.render('aboutus');
+
+})
+app.get("/contactuspage", (req, res) => {
+  res.render('contactuspage');
+
+})
+//  app.get("/pdfsphy1001", (req, res) => {
+//   res.render("pdfsphy1001")
+//  })
  app.get('/home', ensureAuthenticated, (req,res)=>{
   res.render('home');
 })
@@ -80,17 +88,68 @@ app.get('/signuppage',(req,res)=>{
   app.get('/acc.png', function(req,res){
     res.sendFile(__dirname + "/public/" + "acc.png")
   });
+  app.get('/pdfimg.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "pdfimg.png")
+  });
+  app.get('/bg_image.jpg', function(req,res){
+    res.sendFile(__dirname + "/public/" + "bg_image.jpg")
+  });
   app.get('/scrolltotop.css', function(req,res){
     res.sendFile(__dirname + "/public/" + "scrolltotop.css")
+  });
+  app.get('/chemistry.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "chemistry.png")
+  });
+  app.get('/civill.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "civill.png")
+  });
+  app.get('/commentbox.js', function(req,res){
+    res.sendFile(__dirname + "/public/" + "commentbox.js")
+  });
+  app.get('/commentboxstyle.css', function(req,res){
+    res.sendFile(__dirname + "/public/" + "commentboxstyle.css")
+  });
+  app.get('/computer.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "computer.png")
+  });
+  app.get('/ddddec.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "ddddec.png")
+  });
+  app.get('/electricall.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "electricall.png")
+  });
+  app.get('/fivestar.css', function(req,res){
+    res.sendFile(__dirname + "/public/" + "fivestar.css")
+  });
+  app.get('/logo.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "logo.png")
+  });
+  app.get('/mechanical.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "mechanical.png")
+  });
+  app.get('/navbar.css', function(req,res){
+    res.sendFile(__dirname + "/public/" + "navbar.css")
+  });
+  app.get('/nextpages.css', function(req,res){
+    res.sendFile(__dirname + "/public/" + "nextpages.css")
+  });
+  app.get('/phyysics.png', function(req,res){
+    res.sendFile(__dirname + "/public/" + "phyysics.png")
+  });
+   app.get('/scrolltotop.js', function(req,res){
+    res.sendFile(__dirname + "/public/" + "scrolltotop.js")
+  });
+  app.get('/stylesheet.css', function(req,res){
+    res.sendFile(__dirname + "/public/" + "stylesheet.css")
+  });
+  app.get('/movepages.js', function(req,res){
+    res.sendFile(__dirname + "/public/" + "movepages.js'")
   });
   app.get('/scrolltotop.js', function(req,res){
     res.sendFile(__dirname + "/public/" + "scrolltotop.js")
   });
   app.get('/bookshelves.png', function(req,res){
     res.sendFile(__dirname + "/public/" + "bookshelves.png")
-  });
-  app.get('/bg image.jpg', function(req,res){
-    res.sendFile(__dirname + "/public/" + "bg image.jpg")
   });
   // app.use('/static', express.static(path.join(__dirname, 'public')))
   app.post('/signuppage',async (req,res)=>{
@@ -107,7 +166,7 @@ if(password !== password2) {
 
 //check if password is more than 6 characters
 if(password.length < 6 ) {
-    errors.push({msg : 'password atleast 6 characters'})
+    errors.push({msg : 'password must be atleast 6 characters'})
 }
 if(errors.length > 0 ) {
 res.render('signuppage', {
@@ -186,58 +245,6 @@ connection.once('open', () => {
 const PORT = process.env.PORT || 5500;
 
 
-// app.post('/attend', async (req, res) => {
-//   console.log("request received");
-//   const { email, username, password} = req.body;
-//   console.log(email);
-//   console.log(password);
-//   console.log(username);
-//   try {
-//     let data = await userRoutes.findOne({ email: email });
-//     if (data) {
-//       return res
-//         .status(400)
-//         .json({ errors: [{ msg: 'User exists' }] });
-//     }
-//     const Data = await userRoutes.save(req);
-//     console.log(Data);
-    
-//   } catch (err) {
-//     console.error(err.message);
-//     return res.status(500).send('Server Error');
-//   }
-//   return res.json({ msg: "success" })
-// });
-
-// app.post('/login', async (req, res) => {
-//   console.log("request received");
-//   const { usn, password } = req.body;
-  
-//   try {
-//     const user = await userRoutes.findOne({ usn: usn });
-//     if (!user) {
-//       // User with the provided USN not found 
-//       console.log('User not found');  
-//       return res.send('User not found');
-     
-//     }
-
-//     if (user.password !== password) {
-//       // Incorrect password
-//       console.log('Incorrect password');
-//       return res.send('Incorrect password');
-      
-//     }
-//     // User found and password matched
-//     return res.send('Login successful');
-//   } catch (error) {
-//     console.log('Error:', error);
-//     return res.status(500).json({ message: 'Server error' });
-//   }
-// });
-
-//app.use(express.static('public'));
-
 
 
 
@@ -251,9 +258,10 @@ const PORT = process.env.PORT || 5500;
 
 
  let gfs;
- connection.once('open', () => {
-   gfs = new mongoose.mongo.GridFSBucket(connection.db, { bucketName: "uploads" });
- });
+  connection.once('open', () => {
+    gfs = new mongoose.mongo.GridFSBucket(connection.db, { bucketName: "uploads" });
+  
+  });
 const storage = new GridFsStorage({
   url: 'mongodb+srv://aishwarya:aishwaryapass@cluster0.fah4o06.mongodb.net/?retryWrites=true&w=majority',
   file: (req, file) => {
@@ -262,7 +270,8 @@ const storage = new GridFsStorage({
         if (err) {
           return reject(err);
         }
-        const filename = buf.toString('hex') + path.extname(file.originalname);
+       // const filename = buf.toString('hex') + path.extname(file.originalname);
+        const filename =file.originalname
         const fileInfo = {
           filename: filename,
           bucketName: 'uploads',
@@ -279,80 +288,153 @@ app.post("/upload", upload.single("file"), (req, res) => {
   res.redirect("/index");
 });
 
-// app.get("/pdf/:filename", (req, res) => {
-//   // console.log('id', req.params.id)
-//   const file = gfs
-//     .find({
-//       filename: req.params.filename
+
+
+
+
+
+const fs = require('fs');
+const { ObjectId } = require('mongoose').Types;
+//to download to system
+// app.get("/xx", (req, res) =>{
+//   gfs.openDownloadStreamByName('9c76dfee1b9fb1a15e262d7991a51a4e.pdf')
+//     .pipe(fs.createWriteStream('./newpdf.pdf'))
+//      .on('finish', () => {
+//       console.log('File downloaded successfully.');
+//       res.send('File downloaded successfully.');
 //     })
-//     .toArray((err, files) => {
-//       if (!files || files.length === 0) {
-//         return res.status(404).json({
-//           err: "no files exist"
-//         });
-//       }
-//       gfs.openDownloadStreamByName(req.params.filename).pipe(res);
+//     .on('error', (err) => {
+//       console.error('Error downloading file:', err);
+//       res.status(500).send('Error downloading file.');
 //     });
+// })
+//to open in browser
+// app.get('/xx', (req, res) => {
+//   const fileStream = gfs.openDownloadStreamByName('9c76dfee1b9fb1a15e262d7991a51a4e.pdf');
+
+//   res.setHeader('Content-Type', 'application/pdf');
+//   res.setHeader('Content-Disposition', 'inline; filename="pdfphy1001.pdf"');
+
+//   fileStream.pipe(res);
+// });
+app.get('/xx/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const fileStream = gfs.openDownloadStreamByName(filename);
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+
+  fileStream.pipe(res);
+});
+app.get("/pdfsphy1001", async(req, res) => {
+  console.log("/pdfsphy1001 ");
+  if (!gfs) {
+    console.log("Some error occurred, check connection to db");
+    res.send("Some error occurred, check connection to db");
+    process.exit(0);
+  }
+  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB");
+
+    const db = client.db("test"); // Replace with your database name
+    const bucket = new GridFSBucket(db, { bucketName: "uploads" }); // Replace with your GridFS bucket name
+
+    const filesCollection = db.collection('uploads.files');
+    
+    // Retrieve files from GridFS collection
+    const files = await filesCollection.find({}).toArray();
+  //  console.log("Files in GridFS:", files);
+    return res.render("pdfsphy1001", { files: files });
+    // Perform further processing with the retrieved files if needed
+
+  } catch (err) {
+    console.error("Error connecting to MongoDB:", err);
+  } finally {
+    client.close();
+  }
+ 
+  // gfs.find({}).toArray((err, files) => {
+  //   console.log("entered find ");
+  //   if (err) {
+  //     console.error("Error retrieving files from MongoDB:", err);
+  //     return res.render("pdfsphy1001", { files: false });
+  //   }
+
+  //   if (!files || files.length === 0) {
+  //     return res.render("pdfsphy1001", { files: false });
+  //   }
+
+  //   const f = files
+  //     .map((file) => {
+  //       if (file.contentType === "application/pdf") {
+  //         file.isPDF = true;
+  //       } else {
+  //         file.isPDF = false;
+  //       }
+  //       return file;
+  //     })
+  //     .sort((a, b) => {
+  //       return (
+  //         new Date(b["uploadDate"]).getTime() -
+  //         new Date(a["uploadDate"]).getTime()
+  //       );
+  //     });
+
+  //   return res.render("pdfsphy1001", { files: f });
+  // });
+});
+const { MongoClient } = require('mongodb');
+const { GridFSBucket } = require('mongodb');
+
+const uri = "mongodb+srv://aishwarya:aishwaryapass@cluster0.fah4o06.mongodb.net/?retryWrites=true&w=majority"; // Replace with your MongoDB connection string
+
+async function retrieveFilesFromGridFS() {
+  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+  try {
+    await client.connect();
+    console.log("Connected to MongoDB");
+
+    const db = client.db("test"); // Replace with your database name
+    const bucket = new GridFSBucket(db, { bucketName: "uploads" }); // Replace with your GridFS bucket name
+
+    const filesCollection = db.collection('uploads.files');
+    
+    // Retrieve files from GridFS collection
+    const files = await filesCollection.find({}).toArray();
+    console.log("Files in GridFS:", files);
+
+    // Perform further processing with the retrieved files if needed
+
+  } catch (err) {
+    console.error("Error connecting to MongoDB:", err);
+  } finally {
+    client.close();
+  }
+}
+
+retrieveFilesFromGridFS();
+
+// app.get("/pdfsphy1001", (req, res) => {
+//   const dummyFiles = [
+//     { filename: "9c76dfee1b9fb1a15e262d7991a51a4e.pdf" },
+//     { filename: "9c76dfee1b9fb1a15e262d7991a51a4e.pdf" },
+//     { filename: "9c76dfee1b9fb1a15e262d7991a51a4e.pdf" },
+//     // Add more dummy file objects as needed
+//   ];
+
+//   return res.render("pdfsphy1001", {
+//     files: dummyFiles,
+//   });
 // });
 
 
 
-app.get('/api/pdf', async (req, res) => {
-  if (!gfs) {
-    return res.status(500).send('GridFS is not initialized');
-  }
-
-  const pdfId = '664ddd5e428d9cfdb18bb40aa';
-  const pdfStream = gfs.openDownloadStream(pdfId);
-
-  
-
- 
-  pdfStream.pipe(res);
-  pdfStream.on('error', (err) => {
-    console.error('Error streaming PDF:', err);
-    res.status(404).send('PDF not found');
-  });
-
-  res.setHeader('Content-Type', 'application/pdf');
-});
 
 
 
-
-
-app.get("/", (req, res) => {
-  if (!gfs) {
-    console.log("Some error occurred, check connection to the database");
-    res.send("Some error occurred, check connection to the database");
-    process.exit(0);
-  }
-
-  gfs.find({ contentType: "application/pdf" }).toArray((err, files) => {
-    if (err) {
-      console.error("Error fetching files from GridFS:", err);
-      res.status(500).send("An error occurred while fetching files");
-      return;
-    }
-
-    if (!files || files.length === 0) {
-      return res.render("index", {
-        files: false,
-      });
-    } else {
-      const pdfFiles = files.sort((a, b) => {
-        return (
-          new Date(b["uploadDate"]).getTime() -
-          new Date(a["uploadDate"]).getTime()
-        );
-      });
-
-      return res.render("index", {
-        files: pdfFiles,
-      });
-    }
-  });
-});
 
 
 app.listen(PORT, () => {

@@ -61,7 +61,7 @@
         }
 
         .container {
-            height: 420px;
+           
             width: 350px;
             padding: 50px;
             background-color: rgb(248, 227, 169);
@@ -76,7 +76,11 @@
             box-shadow: -1px -1px 20px 1px rgba(0, 0, 0, 0.57);
 
         }
-
+        .message{
+            color:red;
+            font-style: italic;
+            font-size: small;
+        }
         .inpboxes {
             height: 30px;
             width: 100%;
@@ -162,7 +166,7 @@
     <div class="container inpcont">
         <!--action="/sign_up" method="POST"-->
         <form id="signupform" action="/signuppage" method="post">&nbsp&nbsp&nbsp&nbsp
-            <div class="create">Create an account</div>
+            <div class="create" style="color: rgb(126, 83, 3);">Create an Account</div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email address:</label>
@@ -187,7 +191,9 @@
 
 
             <button class="Signup" value="submit" type="submit">Sign up</button>
+            <div class= "message">
             <%- include ('./partials/messages') %> 
+            </div>
             <div class="gotosignup">Already have an account? <a href="/loginpage" style="color:blue ;">Log in</a>
             </div>
             
