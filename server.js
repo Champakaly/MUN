@@ -217,6 +217,7 @@ res.render('signuppage', {
   })
 
   app.post('/loginpage',(req,res,next)=>{
+    console.log("DEMONSTRATION ON 3RD SEPT")
     passport.authenticate('local',{
       successRedirect : '/home',
       failureRedirect : '/loginpage',
