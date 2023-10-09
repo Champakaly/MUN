@@ -37,8 +37,8 @@ jobs:
           context: .  # Use the current directory as the build context
           push: true
           tags: |
-            aish0104/ourfirstapp:latest
-            aish0104/ourfirstapp:${{ github.sha }}
+            advithid/ourfirstapp:latest
+            advithid/ourfirstapp:${{ github.sha }}
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}  
           
